@@ -1,5 +1,8 @@
 # LinkedIn Post 
 
+link to the post - https://www.linkedin.com/posts/deepikaaupadhyaya_payments-fraudprevention-aiagents-activity-7511491908892962816-2b93?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACA4NUwBHCyuIAUIJGFwYzjAorIIMP2c0NM
+
+
 Most bank-change fraud doesn't look like an attack. It looks like an email asking to update bank details.
 
 When I started scoping this, I thought the problem was who sent it. Then I learned that in a compromised mailbox, the domain, SPF, DKIM and DMARC all pass. The sender checks out. The request can still be fraud.
