@@ -1,0 +1,20 @@
+# 1. Ignore a specific file
+main.aux
+main.bbl
+main.blg
+main.out
+named.bst
+references.bib
+.DS_STORE
+
+
+# 2. Ignore an entire folder (always add a trailing slash)
+__pycache__/
+
+
+
+# 3. Ignore all files with a specific extension (using wildcards)
+*.log
+
+
+# 4. Add an exception (ignore all .log files EXCEPT important.log)
