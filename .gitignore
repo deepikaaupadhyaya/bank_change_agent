@@ -1,24 +1,22 @@
-# 1. Ignore a specific file
-main.aux
-main.bbl
-main.blg
-main.out
-named.bst
-references.bib
-
-
-# 2. Ignore an entire folder (always add a trailing slash)
+.venv/
 __pycache__/
+*.py[cod]
 
-
-
-# 3. Ignore all files with a specific extension (using wildcards)
-*.log
-
-
-# 4. Add an exception (ignore all .log files EXCEPT important.log)
-
-
-# 5. Ignore macOS system files
 .DS_Store
-**/.DS_Store
+.DS_STORE
+
+# LaTeX build output; keep the paper sources, bibliography, styles, and PDFs.
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.fdb_latexmk
+paper/*.fls
+paper/*.log
+paper/*.out
+paper/*.synctex.gz
+paper/*.toc
+paper/*.lof
+paper/*.lot
+paper/*.nav
+paper/*.snm
+paper/*.vrb
