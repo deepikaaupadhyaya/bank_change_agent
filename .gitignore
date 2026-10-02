@@ -5,7 +5,6 @@ main.blg
 main.out
 named.bst
 references.bib
-.DS_STORE
 
 
 # 2. Ignore an entire folder (always add a trailing slash)
@@ -18,3 +17,8 @@ __pycache__/
 
 
 # 4. Add an exception (ignore all .log files EXCEPT important.log)
+
+
+# 5. Ignore macOS system files
+.DS_Store
+**/.DS_Store
