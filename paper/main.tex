@@ -83,9 +83,11 @@ P(F\mid e_{1:k}) =
 with $P(G\mid e_{1:k})=1-P(F\mid e_{1:k})$, so beliefs always sum to 100\%.
 Expected costs at posterior $p$ and amount $A$ are
 \begin{equation}
-E[C\mid\mathrm{APPROVE}]=p\cdot A,\quad
-E[C\mid\mathrm{VERIFY}]=150,\quad
-E[C\mid\mathrm{ESCALATE}]=500.
+\begin{aligned}
+E[C\mid\mathrm{APPROVE}] &= p\cdot A,\\
+E[C\mid\mathrm{VERIFY}] &= 150,\\
+E[C\mid\mathrm{ESCALATE}] &= 500.
+\end{aligned}
 \label{eq:cost}
 \end{equation}
 Decision rule: ESCALATE if $p\ge 0.65$; APPROVE if $p\cdot A<150$ and $p<0.35$;
@@ -98,14 +100,14 @@ scoring.
 
 \section{Test Method}
 One fixed simulation of 40 labeled cases (32 genuine, 8 fraud) stored in
-\texttt{data/supplier\_bank\_change\_simulated\_dataset.xlsx}
+\texttt{data/\allowbreak{}supplier\_\allowbreak{}bank\_\allowbreak{}change\_\allowbreak{}simulated\_\allowbreak{}dataset.xlsx}
 \cite{bankchange-data}. Two agent policies (Bayesian cost-sensitive; deterministic
 red-flag checklist with zero weight on email authentication) plus an email-auth
 baseline (approve iff authentication passes) and two reference ceilings
 (always-approve, always-verify). Metrics beyond accuracy: confusion matrix,
 precision, recall, false-positive and false-negative counts, human-review rate,
 decision cost, and binned calibration (ECE). Every case$\times$policy prediction is
-saved in \texttt{results/predictions.csv} (200 rows). The manuscript is formatted
+saved in \texttt{results/\allowbreak{}predictions.csv} (200 rows). The manuscript is formatted
 with the official IJCAI-ECAI-2026 author kit \cite{ijcai-kit}.
 
 \section{Results}
@@ -113,19 +115,20 @@ Table~\ref{tab:res} and Figure~\ref{fig:cost} summarize the blinded run.
 
 \begin{table}[t]
 \centering
-\caption{Blinded results on 40 simulated cases. V=verify, E=escalate.}
+\caption{Blinded results on 40 simulated cases.}
 \label{tab:res}
+{\footnotesize\setlength{\tabcolsep}{3pt}
 \begin{tabular}{lrrrrr}
 \toprule
-Policy & TP/FP/TN/FN & Prec & Rec & Review & Cost (\$) \\
+Policy & TP/FP/TN/FN & Prec & Rec & Rev. & Cost \$ \\
 \midrule
 Bayesian & 8/6/26/0 & 0.571 & 1.000 & 0.350 & 4,200 \\
 Checklist & 8/13/19/0 & 0.381 & 1.000 & 0.525 & 6,300 \\
-Baseline (SPF) & 1/1/31/7 & 0.500 & 0.125 & 0.050 & 143,374 \\
+SPF baseline & 1/1/31/7 & 0.500 & 0.125 & 0.050 & 143,374 \\
 Always approve & 0/0/32/8 & 0.000 & 0.000 & 0.000 & 150,736 \\
 Always verify & 8/32/0/0 & 0.200 & 1.000 & 1.000 & 6,000 \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 
 \begin{figure}[t]
@@ -140,7 +143,7 @@ all wire losses.}
 Both agents reach recall 1.000 with zero fraud loss; the baseline misses 7 of 8
 frauds (recall 0.125) because authentication passes on compromise. Calibration ECE is
 0.038 for the Bayesian policy (bins hold only 1--5 cases, so indicative only).
-Every number in this section was re-verified against \texttt{results/metrics.json}.
+Every number in this section was re-verified against \texttt{results/\allowbreak{}metrics.json}.
 
 \section{Failure Analysis}
 Six examined errors, each named: Stolen-Callback Confirmation (fraud with a
@@ -176,7 +179,7 @@ Muse Spark (via OpenCode) drafted code, computed metrics, formatted LaTeX, and a
 as practitioner, probability, and preprint reviewer; 17 of 21 review comments were
 accepted with reasons in \texttt{review-record.md}. All Reddit/X content is the
 student's own questions and summaries; no AI conversation was fabricated; every test
-reported was executed by \texttt{experiments/run\_experiment.py}.
+reported was executed by \texttt{experiments/\allowbreak{}run\_experiment.py}.
 
 \section*{Contribution}
 Solo student work. Problem selection, public discussions, agent design, software
